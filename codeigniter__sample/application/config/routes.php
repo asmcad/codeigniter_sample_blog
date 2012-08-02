@@ -39,7 +39,10 @@
 */
 
 $route['default_controller'] = "index_c";
-$route['404_override'] = '';
+$route['404_override'] = 'index_c/override_404';
+
+$route['routed/:num'] = "index_c/routed";
+$route['routed/:any'] = "index_c/routed1";
 
 
 /* End of file routes.php */

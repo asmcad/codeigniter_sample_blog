@@ -28,11 +28,34 @@ class Index_c extends CI_Controller {
 	public function home()
 	{
 		$data["title"] = "this is header";
+	
+	
+	$this->load->helper('directory');
+	 $map = directory_map('C:\wamp\www\codeigniter__sample\application\controllers');
+	print_r($map);
+	
 		$data["body"] = "this is body";
 				
 		$this->load->view("home_v",$data);
 		
 		
+	}
+	
+	
+	public function override_404()
+	{
+		echo "<h1>Something went wrong!</h1>";
+	}
+	
+	public function routed()
+	{
+		echo "it's routed<br />";
+		
+		echo $this->uri->segment(2);
+	}
+	public function routed1()
+	{
+		echo "it's routed1";
 	}
 	
 	public function add()
